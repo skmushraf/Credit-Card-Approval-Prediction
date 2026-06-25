@@ -1,0 +1,53 @@
+=== Application Record Descriptive Stats ===
+                  ID CODE_GENDER FLAG_OWN_CAR FLAG_OWN_REALTY   CNT_CHILDREN  AMT_INCOME_TOTAL NAME_INCOME_TYPE            NAME_EDUCATION_TYPE NAME_FAMILY_STATUS  NAME_HOUSING_TYPE     DAYS_BIRTH  DAYS_EMPLOYED  FLAG_MOBIL  FLAG_WORK_PHONE     FLAG_PHONE     FLAG_EMAIL OCCUPATION_TYPE  CNT_FAM_MEMBERS
+count   4.385570e+05      438557       438557          438557  438557.000000      4.385570e+05           438557                         438557             438557             438557  438557.000000  438557.000000    438557.0    438557.000000  438557.000000  438557.000000          304354    438557.000000
+unique           NaN           2            2               2            NaN               NaN                5                              5                  5                  6            NaN            NaN         NaN              NaN            NaN            NaN              18              NaN
+top              NaN           F            N               Y            NaN               NaN          Working  Secondary / secondary special            Married  House / apartment            NaN            NaN         NaN              NaN            NaN            NaN        Laborers              NaN
+freq             NaN      294440       275459          304074            NaN               NaN           226104                         301821             299828             393831            NaN            NaN         NaN              NaN            NaN            NaN           78240              NaN
+mean    6.022176e+06         NaN          NaN             NaN       0.427390      1.875243e+05              NaN                            NaN                NaN                NaN  -15997.904649   60563.675328         1.0         0.206133       0.287771       0.108207             NaN         2.194465
+std     5.716370e+05         NaN          NaN             NaN       0.724882      1.100869e+05              NaN                            NaN                NaN                NaN    4185.030007  138767.799647         0.0         0.404527       0.452724       0.310642             NaN         0.897207
+min     5.008804e+06         NaN          NaN             NaN       0.000000      2.610000e+04              NaN                            NaN                NaN                NaN  -25201.000000  -17531.000000         1.0         0.000000       0.000000       0.000000             NaN         1.000000
+25%     5.609375e+06         NaN          NaN             NaN       0.000000      1.215000e+05              NaN                            NaN                NaN                NaN  -19483.000000   -3103.000000         1.0         0.000000       0.000000       0.000000             NaN         2.000000
+50%     6.047745e+06         NaN          NaN             NaN       0.000000      1.607805e+05              NaN                            NaN                NaN                NaN  -15630.000000   -1467.000000         1.0         0.000000       0.000000       0.000000             NaN         2.000000
+75%     6.456971e+06         NaN          NaN             NaN       1.000000      2.250000e+05              NaN                            NaN                NaN                NaN  -12514.000000    -371.000000         1.0         0.000000       1.000000       0.000000             NaN         3.000000
+max     7.999952e+06         NaN          NaN             NaN      19.000000      6.750000e+06              NaN                            NaN                NaN                NaN   -7489.000000  365243.000000         1.0         1.000000       1.000000       1.000000             NaN        20.000000
+
+=== Credit Record Descriptive Stats ===
+                  ID  MONTHS_BALANCE   STATUS        is_bad
+count   1.048575e+06    1.048575e+06  1048575  1.048575e+06
+unique           NaN             NaN        8           NaN
+top              NaN             NaN        C           NaN
+freq             NaN             NaN   442031           NaN
+mean    5.068286e+06   -1.913700e+01      NaN  2.960208e-03
+std     4.615058e+04    1.402350e+01      NaN  5.432723e-02
+min     5.001711e+06   -6.000000e+01      NaN  0.000000e+00
+25%     5.023644e+06   -2.900000e+01      NaN  0.000000e+00
+50%     5.062104e+06   -1.700000e+01      NaN  0.000000e+00
+75%     5.113856e+06   -7.000000e+00      NaN  0.000000e+00
+max     5.150487e+06    0.000000e+00      NaN  1.000000e+00
+
+=== Missing Values in Application Record ===
+ID                          0
+CODE_GENDER                 0
+FLAG_OWN_CAR                0
+FLAG_OWN_REALTY             0
+CNT_CHILDREN                0
+AMT_INCOME_TOTAL            0
+NAME_INCOME_TYPE            0
+NAME_EDUCATION_TYPE         0
+NAME_FAMILY_STATUS          0
+NAME_HOUSING_TYPE           0
+DAYS_BIRTH                  0
+DAYS_EMPLOYED               0
+FLAG_MOBIL                  0
+FLAG_WORK_PHONE             0
+FLAG_PHONE                  0
+FLAG_EMAIL                  0
+OCCUPATION_TYPE        134203
+CNT_FAM_MEMBERS             0
+
+=== Missing Values in Credit Record ===
+ID                0
+MONTHS_BALANCE    0
+STATUS            0
+is_bad            0
