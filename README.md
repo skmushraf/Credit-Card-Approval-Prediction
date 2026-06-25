@@ -238,26 +238,6 @@ Add screenshots of:
 
 ---
 
-## 👨‍💻 Author
-
-### Shaik Moulali
-
-B.Tech – Artificial Intelligence & Machine Learning
-
-Passionate about Data Analytics, Machine Learning, Business Intelligence, and building real-world data-driven applications using:
-
-* Python
-* SQL
-* Power BI
-* Excel
-* Machine Learning
-
-### GitHub
-
-https://github.com/skmushraf
-
----
-
 ## ⭐ Support
 
 If you found this project useful, consider giving the repository a star and sharing your feedback.
