@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Approval Prediction</title>
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Link to premium stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="glass-bg"></div>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo">
+                <i class="fa-solid fa-credit-card icon-gradient"></i>
+                <h1>Credit<span>Card</span></h1>
+            </div>
+            <p class="subtitle">Predict Credit Card Application Approvals with Advanced Machine Learning</p>
+        </header>
+
+        <!-- Main Workspace -->
+        <main class="app-main">
+            <!-- Form Side -->
+            <section class="form-section glass-card">
+                <h2><i class="fa-solid fa-file-invoice"></i> Application Form</h2>
+                <form id="predictionForm">
+                    <!-- Section 1: Personal Profile -->
+                    <div class="form-group-section">
+                        <h3><i class="fa-solid fa-user"></i> Personal Profile</h3>
+                        <div class="grid-2">
+                            <div class="input-control">
+                                <label for="CODE_GENDER">Gender</label>
+                                <select id="CODE_GENDER" required>
+                                    <option value="0">Female</option>
+                                    <option value="1">Male</option>
+                                </select>
+                            </div>
+                            <div class="input-control">
+                                <label for="AGE">Age (Years)</label>
+                                <input type="number" id="AGE" min="18" max="100" value="35" required>
+                            </div>
+                        </div>
+                        <div class="grid-2">
+                            <div class="input-control">
+                                <label for="NAME_FAMILY_STATUS">Marital Status</label>
+                                <select id="NAME_FAMILY_STATUS" required>
+                                    <option value="Married">Married</option>
+                                    <option value="Single / not married">Single / Not Married</option>
+                                    <option value="Civil marriage">Civil Marriage</option>
+                                    <option value="Separated">Separated</option>
+                                    <option value="Widow">Widowed</option>
+                                </select>
+                            </div>
+                            <div class="input-control">
+                                <label for="NAME_EDUCATION_TYPE">Education Level</label>
+                                <select id="NAME_EDUCATION_TYPE" required>
+                                    <option value="Secondary / secondary special">Secondary / Special</option>
+                                    <option value="Higher education">Higher Education</option>
+                                    <option value="Incomplete higher">Incomplete Higher</option>
+                                    <option value="Lower secondary">Lower Secondary</option>
+                                    <option value="Academic degree">Academic Degree</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="grid-3">
+                            <div class="input-control">
+                                <label for="CNT_CHILDREN">Children</label>
+                                <input type="number" id="CNT_CHILDREN" min="0" max="20" value="0" required>
+                            </div>
+                            <div class="input-control">
+                                <label for="CNT_FAM_MEMBERS">Family Size</label>
+                                <input type="number" id="CNT_FAM_MEMBERS" min="1" max="20" value="2" required>
+                            </div>
+                            <div class="input-control">
+                                <label for="NAME_HOUSING_TYPE">Housing Type</label>
+                                <select id="NAME_HOUSING_TYPE" required>
+                                    <option value="House / apartment">House / Apartment</option>
+                                    <option value="With parents">With Parents</option>
+                                    <option value="Municipal apartment">Municipal Apartment</option>
+                                    <option value="Rented apartment">Rented Apartment</option>
+                                    <option value="Office apartment">Office Apartment</option>
+                                    <option value="Co-op apartment">Co-op Apartment</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 2: Finances & Assets -->
+                    <div class="form-group-section">
+                        <h3><i class="fa-solid fa-wallet"></i> Finances & Assets</h3>
+                        <div class="grid-2">
+                            <div class="input-control">
+                                <label for="AMT_INCOME_TOTAL">Annual Income (USD)</label>
+                                <div class="input-with-icon">
+                                    <span class="currency-symbol">$</span>
+                                    <input type="number" id="AMT_INCOME_TOTAL" min="1000" max="10000000" value="50000" required>
+                                </div>
+                            </div>
+                            <div class="input-control">
+                                <label for="NAME_INCOME_TYPE">Income Source</label>
+                                <select id="NAME_INCOME_TYPE" required>
+                                    <option value="Working">Working</option>
+                                    <option value="Commercial associate">Commercial Associate</option>
+                                    <option value="Pensioner">Pensioner</option>
+                                    <option value="State servant">State Servant</option>
+                                    <option value="Student">Student</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="grid-2 checkbox-group">
+                            <label class="custom-checkbox">
+                                <input type="checkbox" id="FLAG_OWN_CAR" value="1">
+                                <span class="checkmark"></span>
+                                Owns a Car
+                            </label>
+                            <label class="custom-checkbox">
+                                <input type="checkbox" id="FLAG_OWN_REALTY" value="1" checked>
+                                <span class="checkmark"></span>
+                                Owns Property / Realty
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Section 3: Professional Profile -->
+                    <div class="form-group-section">
+                        <h3><i class="fa-solid fa-briefcase"></i> Professional Profile</h3>
+                        <div class="grid-2">
+                            <div class="input-control">
+                                <label for="OCCUPATION_TYPE">Occupation Type</label>
+                                <select id="OCCUPATION_TYPE" required>
+                                    <option value="Unknown">Select / Unknown</option>
+                                    <option value="Laborers">Laborers</option>
+                                    <option value="Core staff">Core Staff</option>
+                                    <option value="Sales staff">Sales Staff</option>
+                                    <option value="Managers">Managers</option>
+                                    <option value="Drivers">Drivers</option>
+                                    <option value="High skill tech staff">High Skill Tech Staff</option>
+                                    <option value="Accountants">Accountants</option>
+                                    <option value="Medicine staff">Medicine Staff</option>
+                                    <option value="Cooking staff">Cooking Staff</option>
+                                    <option value="Security staff">Security Staff</option>
+                                    <option value="Cleaning staff">Cleaning Staff</option>
+                                    <option value="Private service staff">Private Service Staff</option>
+                                    <option value="Low-skill Laborers">Low-Skill Laborers</option>
+                                    <option value="Secretaries">Secretaries</option>
+                                    <option value="Waiters/barmen staff">Waiters/Barmen Staff</option>
+                                    <option value="Realty agents">Realty Agents</option>
+                                    <option value="HR staff">HR Staff</option>
+                                    <option value="IT staff">IT Staff</option>
+                                </select>
+                            </div>
+                            <div class="input-control">
+                                <label for="YEARS_EMPLOYED">Years of Employment</label>
+                                <input type="number" id="YEARS_EMPLOYED" min="0" max="60" value="5" required>
+                            </div>
+                        </div>
+                        <div class="grid-2 checkbox-group">
+                            <label class="custom-checkbox">
+                                <input type="checkbox" id="UNEMPLOYED" value="1">
+                                <span class="checkmark"></span>
+                                Currently Unemployed / Retired
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Section 4: Contact & Phone flags -->
+                    <div class="form-group-section">
+                        <h3><i class="fa-solid fa-address-book"></i> Contacts</h3>
+                        <div class="grid-3 checkbox-group">
+                            <label class="custom-checkbox">
+                                <input type="checkbox" id="FLAG_WORK_PHONE" value="1">
+                                <span class="checkmark"></span>
+                                Work Phone
+                            </label>
+                            <label class="custom-checkbox">
+                                <input type="checkbox" id="FLAG_PHONE" value="1" checked>
+                                <span class="checkmark"></span>
+                                Home/Mobile Phone
+                            </label>
+                            <label class="custom-checkbox">
+                                <input type="checkbox" id="FLAG_EMAIL" value="1">
+                                <span class="checkmark"></span>
+                                Email Address
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary" id="submitBtn">
+                        <span>Evaluate Application</span>
+                        <i class="fa-solid fa-circle-notch fa-spin btn-spinner"></i>
+                    </button>
+                </form>
+            </section>
+
+            <!-- Result Side -->
+            <section class="result-section">
+                <!-- Idle State -->
+                <div class="result-card glass-card result-idle" id="resultIdle">
+                    <div class="result-icon-container bg-glow-blue">
+                        <i class="fa-solid fa-wand-magic-sparkles magic-icon"></i>
+                    </div>
+                    <h2>Awaiting Evaluation</h2>
+                    <p>Enter applicant details and click the button to run the predictive approval analysis.</p>
+                </div>
+
+                <!-- Result Display State -->
+                <div class="result-card glass-card result-display hidden" id="resultDisplay">
+                    <div class="result-badge-container" id="resultBadgeContainer">
+                        <i class="fa-solid" id="resultIcon"></i>
+                    </div>
+                    <h2 id="resultTitle">Approved</h2>
+                    <p class="result-prob" id="resultProbText">Approval Probability: 95%</p>
+                    
+                    <!-- Circular Progress Gauge -->
+                    <div class="gauge-container">
+                        <svg class="gauge-svg" viewBox="0 0 100 100">
+                            <circle class="gauge-track" cx="50" cy="50" r="40" />
+                            <circle class="gauge-fill" id="gaugeFill" cx="50" cy="50" r="40" />
+                        </svg>
+                        <div class="gauge-percentage" id="gaugePercentage">95%</div>
+                    </div>
+                    
+                    <div class="result-details">
+                        <p class="result-msg" id="resultMsg">Application has low credit risk profile.</p>
+                        <div class="metrics-grid">
+                            <div class="metric-item">
+                                <span class="label">Approval Confidence</span>
+                                <span class="val text-success" id="detailApproval">95.2%</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="label">Risk Level</span>
+                                <span class="val" id="detailRisk">Low</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-secondary" id="resetBtn">
+                        <i class="fa-solid fa-rotate-left"></i> Run Another Evaluation
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>&copy; 2026 Antigravity IDE. Crafted with precision and machine learning excellence.</p>
+        </footer>
+    </div>
+
+    <!-- Link to script -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
