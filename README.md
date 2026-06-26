@@ -199,44 +199,6 @@ cd Credit-Card-Approval-Prediction
 
 ```bash
 pip install -r requirements.txt
-```
-
-### Run the Application
-
-```bash
-python main.py
-```
-
-### Open Browser
-
-```text
-http://localhost:5000
-```
-
----
-
-## 📸 Screenshots
-
-Add screenshots of:
-
-* Home Page
-* Prediction Form
-* Prediction Result
-* EDA Visualizations
-
----
-
-## 🔮 Future Improvements
-
-* Advanced Model Optimization
-* Hyperparameter Tuning
-* Explainable AI (SHAP/LIME)
-* Cloud Deployment
-* Real-Time API Integration
-* User Authentication
-* Dashboard Analytics
-
----
 
 ## ⭐ Support
 
