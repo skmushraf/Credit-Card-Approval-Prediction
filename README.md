@@ -180,26 +180,4 @@ The analysis focuses on:
 * Data-driven decision-making for credit assessment.
 
 ---
-
-## 💻 Installation & Setup
-
-### Clone Repository
-
-```bash
-git clone https://github.com/skmushraf/Credit-Card-Approval-Prediction.git
-```
-
-### Navigate to Project Directory
-
-```bash
-cd Credit-Card-Approval-Prediction
-```
-
-### Install Dependencies
-
-```bash
-pip install -r requirements.txt
-
-## ⭐ Support
-
-If you found this project useful, consider giving the repository a star and sharing your feedback.
+project preview link (https://huggingface.co/spaces/Mushraf24/creditcard1)
